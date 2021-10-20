@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">INews</string>
+    <string name="dashboard">Dashboard</string>
+    <string name="pilih_berita_nfavorit_anda">Pilih Berita \nFavorit Anda</string>
+    <string name="bisnis">Bisnis</string>
+    <string name="sains">Sains</string>
+    <string name="teknologi">Teknologi</string>
+    <string name="hiburan">Hiburan</string>
+    <string name="olahraga">Olahraga</string>
+    <string name="kesehatan">Kesehatan</string>
 </resources>
