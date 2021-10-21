@@ -1,4 +1,4 @@
-package com.baharudin.inews.data
+package com.baharudin.inews.data.model
 
 data class Source(
     val id: Any,

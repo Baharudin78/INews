@@ -1,4 +1,4 @@
-package com.baharudin.inews.data
+package com.baharudin.inews.data.model
 
 data class NewsResponse(
     val articles: List<Article>,
