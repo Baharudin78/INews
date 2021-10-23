@@ -9,6 +9,7 @@ class Converter {
     fun fromSource(source: Source) : String {
         return source.name
     }
+    @TypeConverter
     fun toSource(nama : String) : Source {
         return Source(nama, nama)
     }

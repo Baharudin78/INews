@@ -16,7 +16,7 @@ class NewsViewModel @Inject constructor(
     val newsRepository : NewsRepo
 ) :ViewModel(){
 
-    val topHeadlines : MutableLiveData<Result<String>> = MutableLiveData()
+    val topHeadlines : MutableLiveData<Result<NewsResponse>> = MutableLiveData()
     var topHeadlinePage = 1
 
     val searchNews : MutableLiveData<Result<NewsResponse>> = MutableLiveData()
@@ -25,15 +25,30 @@ class NewsViewModel @Inject constructor(
     init {
         getTopHeadline("id")
     }
-    fun getTopHeadline(couneyCode:String) = viewModelScope.launch {
+    fun getTopHeadline(countryCode:String) = viewModelScope.launch {
         topHeadlines.postValue(Result.Loading())
-        val response = newsRepository.getHeadlines(couneyCode,topHeadlinePage)
+        val response = newsRepository.getHeadlines(countryCode,topHeadlinePage)
         topHeadlines.postValue(handleTopHeadline(response))
     }
-    private fun handleTopHeadline(response : Response<String>) : Result<String> {
+
+    fun getSearchNews(searchQuery:String) = viewModelScope.launch {
+        searchNews.postValue(Result.Loading())
+        val response = newsRepository.searchNews(searchQuery, searchPage)
+        searchNews.postValue(handleSearchNews(response))
+
+    }
+    private fun handleTopHeadline(response : Response<NewsResponse>) : Result<NewsResponse> {
         if (response.isSuccessful) {
             response.body().let { result ->
                return Result.Sucess(result)
+            }
+        }
+        return Result.Error(response.message())
+    }
+    private fun handleSearchNews(response: Response<NewsResponse>) : Result<NewsResponse> {
+        if (response.isSuccessful) {
+            response.body()?.let { result ->
+                return Result.Sucess(result)
             }
         }
         return Result.Error(response.message())

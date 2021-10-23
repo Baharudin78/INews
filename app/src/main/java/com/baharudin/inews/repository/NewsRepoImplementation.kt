@@ -14,18 +14,12 @@ class NewsRepoImplementation @Inject constructor(
     private val newsDao: NewsDao,
 ) : NewsRepo {
 
-    override suspend fun getHeadlines(countryCode: String, pageNumber: Int) : Response<NewsResponse>{
-        try {
-            newsApi.getAllHeadlines(countryCode, pageNumber)
-            return
-        }catch (e:Exception) {
+    override suspend fun getHeadlines(countryCode: String, pageNumber: Int) : Response<NewsResponse> =
+        newsApi.getAllHeadlines(countryCode, pageNumber)
 
-        }
-    }
-
-    override suspend fun searchNews(searchQuery: String, pageNumber: Int) {
+    override suspend fun searchNews(searchQuery: String, pageNumber: Int)  : Response<NewsResponse> =
         newsApi.searchNews(searchQuery, pageNumber)
-    }
+
 
     override suspend fun insertBookmark(article: Article): Result<String> {
         return try {
@@ -37,7 +31,7 @@ class NewsRepoImplementation @Inject constructor(
         }
     }
 
-    override suspend fun getAllBookmark(): Flow<List<Article>> = newsDao.getAllBookmark()
+    override  fun getAllBookmark(): Flow<List<Article>> = newsDao.getAllBookmark()
 
     override suspend fun deleteNews(article: Article) {
         try {

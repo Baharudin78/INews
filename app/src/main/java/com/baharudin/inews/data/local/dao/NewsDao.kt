@@ -10,7 +10,7 @@ interface NewsDao {
     suspend fun insertBookmark(article: Article)
 
     @Query("SELECT * FROM articles")
-    suspend fun getAllBookmark() : Flow<List<Article>>
+    fun getAllBookmark() : Flow<List<Article>>
 
     @Delete
     suspend fun deleteBookmark(article: Article)
