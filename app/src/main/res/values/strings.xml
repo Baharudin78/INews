@@ -8,4 +8,6 @@
     <string name="hiburan">Hiburan</string>
     <string name="olahraga">Olahraga</string>
     <string name="kesehatan">Kesehatan</string>
+    <string name="headline">Headline</string>
+    <string name="show_all">Show All</string>
 </resources>

@@ -3,6 +3,7 @@ package com.baharudin.inews.ui.viewmodel
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.baharudin.inews.data.model.Article
 import com.baharudin.inews.data.model.NewsResponse
 import com.baharudin.inews.repository.NewsRepo
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -36,6 +37,13 @@ class NewsViewModel @Inject constructor(
         val response = newsRepository.searchNews(searchQuery, searchPage)
         searchNews.postValue(handleSearchNews(response))
 
+    }
+    fun insertBookmark(articles : Article) = viewModelScope.launch {
+        newsRepository.insertBookmark(articles)
+    }
+    fun getAllBookmark() = newsRepository.getAllBookmark()
+    fun deleteBookmark(article: Article) = viewModelScope.launch {
+        newsRepository.deleteNews(article)
     }
     private fun handleTopHeadline(response : Response<NewsResponse>) : Result<NewsResponse> {
         if (response.isSuccessful) {
