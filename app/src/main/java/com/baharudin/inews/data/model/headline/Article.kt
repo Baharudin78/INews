@@ -1,4 +1,4 @@
-package com.baharudin.inews.data.model
+package com.baharudin.inews.data.model.headline
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey

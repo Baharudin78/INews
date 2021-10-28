@@ -8,12 +8,13 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.baharudin.inews.data.model.headline.Article
 import com.baharudin.inews.databinding.ItemHeadlineBinding
+import com.baharudin.inews.databinding.ItemRekomendasiBinding
 import com.bumptech.glide.Glide
 
-class HeadlineAdapter : RecyclerView.Adapter<HeadlineAdapter.HeadlineHolder>() {
+class RekomendasiAdapter : RecyclerView.Adapter<RekomendasiAdapter.HeadlineHolder>() {
     lateinit var context : Context
 
-    class HeadlineHolder(val binding : ItemHeadlineBinding) : RecyclerView.ViewHolder(binding.root)
+    class HeadlineHolder(val binding : ItemRekomendasiBinding) : RecyclerView.ViewHolder(binding.root)
 
     val diffUtil = object :DiffUtil.ItemCallback<Article>() {
         override fun areItemsTheSame(oldItem: Article, newItem: Article): Boolean {
@@ -31,7 +32,7 @@ class HeadlineAdapter : RecyclerView.Adapter<HeadlineAdapter.HeadlineHolder>() {
     set(value) = differ.submitList(value)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HeadlineHolder {
-        val inflaterView = ItemHeadlineBinding.inflate(
+        val inflaterView = ItemRekomendasiBinding.inflate(
             LayoutInflater.from(
                 parent.context
             ),
@@ -47,8 +48,9 @@ class HeadlineAdapter : RecyclerView.Adapter<HeadlineAdapter.HeadlineHolder>() {
             Glide.with(context)
                 .load(news.urlToImage)
                 .centerCrop()
-                .into(ivToprated)
-            tvJudul.text = news.title
+                .into(image)
+            tvJudulBerita.text = news.title
+            tvdescription.text = news.description
         }
     }
 
