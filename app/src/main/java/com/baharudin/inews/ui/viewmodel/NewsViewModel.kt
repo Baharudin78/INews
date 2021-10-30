@@ -23,22 +23,47 @@ class NewsViewModel @Inject constructor(
     val sourceNews : MutableLiveData<Result<NewsResponse>> = MutableLiveData()
     var sourcePage = 1
 
+    val getBusiness : MutableLiveData<Result<NewsResponse>> = MutableLiveData()
+    var category = "business"
+
     val searchNews : MutableLiveData<Result<NewsResponse>> = MutableLiveData()
     var searchPage = 1
 
     init {
         getTopHeadline("id")
         getSource("us")
+        getBusinessCategory("id")
     }
+
     fun getTopHeadline(countryCode:String) = viewModelScope.launch {
         topHeadlines.postValue(Result.Loading())
         val response = newsRepository.getHeadlines(countryCode,topHeadlinePage)
         topHeadlines.postValue(handleTopHeadline(response))
     }
+
     fun getSource(countryCode: String) = viewModelScope.launch {
         sourceNews.postValue(Result.Loading())
         val response = newsRepository.getSource(countryCode, sourcePage)
         sourceNews.postValue(handleSource(response))
+    }
+
+    fun getBusinessCategory(countryCode: String ) = viewModelScope.launch {
+        getBusiness.postValue(Result.Loading())
+        val response = newsRepository.getBusinessCategory(countryCode, category)
+        getBusiness.postValue(handleBusiness(response))
+    }
+
+
+
+
+    //---------HANDLE RESPONSE ----------------------//
+    private fun handleBusiness(response: Response<NewsResponse>) : Result<NewsResponse> {
+        if (response.isSuccessful) {
+            response.body()?.let { result ->
+                return Result.Sucess(result)
+            }
+        }
+        return Result.Error(response.message())
     }
 
     private fun handleSource(response: Response<NewsResponse>): Result<NewsResponse>? {
