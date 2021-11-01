@@ -41,7 +41,7 @@ class BusinessFragment  : Fragment(R.layout.fragment_business)  {
                     }
                 }
                 is Result.Error -> {
-                    response.message?.let { message ->
+                    response.message?.let {
                         hideProgressbar()
                         Log.e("error", response.message)
                     }
