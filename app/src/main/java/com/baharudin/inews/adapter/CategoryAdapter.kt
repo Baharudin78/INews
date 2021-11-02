@@ -50,11 +50,19 @@ class CategoryAdapter : RecyclerView.Adapter<CategoryAdapter.CategoryHolder>() {
                 .centerCrop()
                 .into(image)
             tvJudul.text = newsCategory.title
+
+            root.setOnClickListener {
+                onItemClickListener?.invoke(newsCategory)
+            }
         }
 
     }
 
     override fun getItemCount(): Int {
         return news.size
+    }
+    private var onItemClickListener : ((Article) -> Unit) ? = null
+    fun setOnclickListener(listener : (Article) -> Unit) {
+        onItemClickListener = listener
     }
 }

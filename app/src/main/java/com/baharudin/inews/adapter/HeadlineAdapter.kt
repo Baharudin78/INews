@@ -10,7 +10,7 @@ import com.baharudin.inews.data.model.headline.Article
 import com.baharudin.inews.databinding.ItemHeadlineBinding
 import com.bumptech.glide.Glide
 
-class HeadlineAdapter : RecyclerView.Adapter<HeadlineAdapter.HeadlineHolder>() {
+class HeadlineAdapter: RecyclerView.Adapter<HeadlineAdapter.HeadlineHolder>() {
     lateinit var context : Context
 
     class HeadlineHolder(val binding : ItemHeadlineBinding) : RecyclerView.ViewHolder(binding.root)
@@ -25,7 +25,7 @@ class HeadlineAdapter : RecyclerView.Adapter<HeadlineAdapter.HeadlineHolder>() {
         }
 
     }
-    val differ = AsyncListDiffer(this, diffUtil)
+    var differ = AsyncListDiffer(this, diffUtil)
     var newsList : List<Article>
     get() = differ.currentList
     set(value) = differ.submitList(value)
@@ -49,10 +49,17 @@ class HeadlineAdapter : RecyclerView.Adapter<HeadlineAdapter.HeadlineHolder>() {
                 .centerCrop()
                 .into(ivToprated)
             tvJudul.text = news.title
+            root.setOnClickListener {
+                onItemClickListener?.invoke(news)
+            }
         }
     }
 
     override fun getItemCount(): Int {
         return newsList.size
+    }
+    private var onItemClickListener : ((Article) -> Unit) ? = null
+    fun setOnItemClickListener(listener : (Article) -> Unit) {
+        onItemClickListener = listener
     }
 }

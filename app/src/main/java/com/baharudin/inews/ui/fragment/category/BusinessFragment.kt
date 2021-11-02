@@ -5,6 +5,7 @@ import android.util.Log
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.baharudin.inews.R
 import com.baharudin.inews.adapter.CategoryAdapter
@@ -54,6 +55,10 @@ class BusinessFragment  : Fragment(R.layout.fragment_business)  {
     }
     private fun setupRecycleview() {
         categortaAdapter = CategoryAdapter()
+        categortaAdapter.setOnclickListener {
+            val action = BusinessFragmentDirections.actionBusinessFragmentToDetailFragment(it)
+            findNavController().navigate(action)
+        }
         binding.rvBisnis.apply {
             adapter = categortaAdapter
             layoutManager = StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)

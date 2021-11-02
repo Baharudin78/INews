@@ -5,6 +5,7 @@ import android.util.Log
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.baharudin.inews.R
 import com.baharudin.inews.adapter.CategoryAdapter
@@ -30,7 +31,7 @@ class TechnologyFragment  : Fragment(R.layout.fragment_technology)  {
     }
 
     private fun getTechData() {
-        newsViewModel.getTechCategory.observe(viewLifecycleOwner, {response ->
+        newsViewModel.getTechCategory.observe(viewLifecycleOwner, { response ->
             when(response) {
                 is Result.Sucess -> {
                     response.data?.let { result ->
@@ -40,9 +41,9 @@ class TechnologyFragment  : Fragment(R.layout.fragment_technology)  {
                     }
                 }
                 is Result.Error -> {
-                    response.message?.let{
+                    response.message?.let {
                         hideProgressbar()
-                        Log.e("Error", response.message)
+                        Log.e("errorTech", response.message)
                     }
                 }
                 is Result.Loading -> {
@@ -53,8 +54,12 @@ class TechnologyFragment  : Fragment(R.layout.fragment_technology)  {
     }
     private fun setupRecycleview() {
         categoryAdapter = CategoryAdapter()
+        categoryAdapter.setOnclickListener {
+            val action = TechnologyFragmentDirections.actionTechnologyFragmentToDetailFragment(it)
+            findNavController().navigate(action)
+        }
         binding.rvTech.apply {
-            adapter = CategoryAdapter()
+            adapter = categoryAdapter
             layoutManager = StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
         }
     }

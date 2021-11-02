@@ -51,10 +51,18 @@ class RekomendasiAdapter : RecyclerView.Adapter<RekomendasiAdapter.HeadlineHolde
                 .into(image)
             tvJudulBerita.text = news.title
             tvdescription.text = news.description
+
+            root.setOnClickListener {
+                onItemClickListener?.invoke(news)
+            }
         }
     }
 
     override fun getItemCount(): Int {
         return newsList.size
+    }
+    private var onItemClickListener : ((Article) -> Unit) ? = null
+    fun setOnItemClickListener(listener : (Article) -> Unit) {
+        onItemClickListener = listener
     }
 }

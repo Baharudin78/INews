@@ -9,7 +9,11 @@
         android:id="@+id/homeFragment"
         android:name="com.baharudin.inews.ui.fragment.HomeFragment"
         android:label="fragment_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_detailFragment"
+            app:destination="@id/detailFragment" />
+    </fragment>
     <fragment
         android:id="@+id/bookmarkFragment"
         android:name="com.baharudin.inews.ui.fragment.BookmarkFragment"
@@ -48,30 +52,63 @@
         android:id="@+id/businessFragment"
         android:name="com.baharudin.inews.ui.fragment.category.BusinessFragment"
         android:label="fragment_business"
-        tools:layout="@layout/fragment_business" />
+        tools:layout="@layout/fragment_business" >
+        <action
+            android:id="@+id/action_businessFragment_to_detailFragment"
+            app:destination="@id/detailFragment" />
+    </fragment>
     <fragment
         android:id="@+id/entertainmentFragment"
         android:name="com.baharudin.inews.ui.fragment.category.EntertainmentFragment"
         android:label="fragment_entertainment"
-        tools:layout="@layout/fragment_entertainment" />
+        tools:layout="@layout/fragment_entertainment" >
+        <action
+            android:id="@+id/action_entertainmentFragment_to_detailFragment"
+            app:destination="@id/detailFragment" />
+    </fragment>
     <fragment
         android:id="@+id/healthFragment"
         android:name="com.baharudin.inews.ui.fragment.category.HealthFragment"
         android:label="fragment_health"
-        tools:layout="@layout/fragment_health" />
+        tools:layout="@layout/fragment_health" >
+        <action
+            android:id="@+id/action_healthFragment_to_detailFragment"
+            app:destination="@id/detailFragment" />
+    </fragment>
     <fragment
         android:id="@+id/scienceFragment"
         android:name="com.baharudin.inews.ui.fragment.category.ScienceFragment"
         android:label="fragment_science"
-        tools:layout="@layout/fragment_science" />
+        tools:layout="@layout/fragment_science" >
+        <action
+            android:id="@+id/action_scienceFragment_to_detailFragment"
+            app:destination="@id/detailFragment" />
+    </fragment>
     <fragment
         android:id="@+id/sportFragment"
         android:name="com.baharudin.inews.ui.fragment.category.SportFragment"
         android:label="fragment_sport"
-        tools:layout="@layout/fragment_sport" />
+        tools:layout="@layout/fragment_sport" >
+        <action
+            android:id="@+id/action_sportFragment_to_detailFragment"
+            app:destination="@id/detailFragment" />
+    </fragment>
     <fragment
         android:id="@+id/technologyFragment"
         android:name="com.baharudin.inews.ui.fragment.category.TechnologyFragment"
         android:label="fragment_technology"
-        tools:layout="@layout/fragment_technology" />
+        tools:layout="@layout/fragment_technology" >
+        <action
+            android:id="@+id/action_technologyFragment_to_detailFragment"
+            app:destination="@id/detailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="com.baharudin.inews.ui.fragment.DetailFragment"
+        android:label="fragment_detail"
+        tools:layout="@layout/fragment_detail" >
+        <argument
+            android:name="detailNews"
+            app:argType="com.baharudin.inews.data.model.headline.Article" />
+    </fragment>
 </navigation>

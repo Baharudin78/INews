@@ -6,6 +6,7 @@ import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.baharudin.inews.R
 import com.baharudin.inews.adapter.HeadlineAdapter
@@ -83,6 +84,10 @@ class HomeFragment : Fragment(R.layout.fragment_home)  {
     }
     private fun setupRecycleview() {
         adapterNews = HeadlineAdapter()
+        adapterNews.setOnItemClickListener {
+            val action = HomeFragmentDirections.actionHomeFragmentToDetailFragment(it)
+            findNavController().navigate(action)
+        }
         binding.rvHeadline.apply {
             adapter = adapterNews
             layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
@@ -90,6 +95,10 @@ class HomeFragment : Fragment(R.layout.fragment_home)  {
     }
     private fun setupRecycleviewRekomendasi() {
         adapterRekomendasi = RekomendasiAdapter()
+        adapterRekomendasi.setOnItemClickListener {
+            val action = HomeFragmentDirections.actionHomeFragmentToDetailFragment(it)
+            findNavController().navigate(action)
+        }
         binding.rvRekomendasi.apply {
             adapter = adapterRekomendasi
             layoutManager = LinearLayoutManager(requireContext())

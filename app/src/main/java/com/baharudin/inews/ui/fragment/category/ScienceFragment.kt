@@ -5,6 +5,7 @@ import android.util.Log
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.baharudin.inews.R
 import com.baharudin.inews.adapter.CategoryAdapter
@@ -55,8 +56,12 @@ class ScienceFragment  : Fragment(R.layout.fragment_science)  {
 
     private fun setupRecycleview() {
         categoryAdapter = CategoryAdapter()
+        categoryAdapter.setOnclickListener {
+            val action = ScienceFragmentDirections.actionScienceFragmentToDetailFragment(it)
+            findNavController().navigate(action)
+        }
         binding.rvScience.apply {
-            adapter = CategoryAdapter()
+            adapter = categoryAdapter
             layoutManager = StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
         }
     }

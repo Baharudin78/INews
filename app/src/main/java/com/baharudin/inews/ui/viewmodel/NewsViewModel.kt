@@ -14,32 +14,32 @@ import javax.inject.Inject
 
 @HiltViewModel
 class NewsViewModel @Inject constructor(
-    val newsRepository : NewsRepo
+    private val newsRepository : NewsRepo
 ) :ViewModel(){
 
     val topHeadlines : MutableLiveData<Result<NewsResponse>> = MutableLiveData()
-    var topHeadlinePage = 1
+    private var topHeadlinePage = 1
 
     val sourceNews : MutableLiveData<Result<NewsResponse>> = MutableLiveData()
-    var sourcePage = 1
+    private var sourcePage = 1
 
     val getBusiness : MutableLiveData<Result<NewsResponse>> = MutableLiveData()
     var category = "business"
 
     val getScience : MutableLiveData<Result<NewsResponse>> = MutableLiveData()
-    var categoryScience = "science"
+    private var categoryScience = "science"
 
     val getSportCategory : MutableLiveData<Result<NewsResponse>> = MutableLiveData()
-    var categorySport = "sports"
+    private var categorySport = "sports"
 
     val getEntertainmentCategory : MutableLiveData<Result<NewsResponse>> = MutableLiveData()
-    var categoryEntertainment = "entertainment"
+    private var categoryEntertainment = "entertainment"
 
     val getHealthCategory : MutableLiveData<Result<NewsResponse>> = MutableLiveData()
-    var categoryHealth = "health"
+    private var categoryHealth = "health"
 
     val getTechCategory : MutableLiveData<Result<NewsResponse>> = MutableLiveData()
-    var categoryTech = "technology"
+    private var categoryTech = "technology"
 
     val searchNews : MutableLiveData<Result<NewsResponse>> = MutableLiveData()
     var searchPage = 1
@@ -55,13 +55,13 @@ class NewsViewModel @Inject constructor(
         getTechCategory("id")
     }
 
-    fun getTopHeadline(countryCode:String) = viewModelScope.launch {
+    private fun getTopHeadline(countryCode:String) = viewModelScope.launch {
         topHeadlines.postValue(Result.Loading())
         val response = newsRepository.getHeadlines(countryCode,topHeadlinePage)
         topHeadlines.postValue(handleTopHeadline(response))
     }
 
-    fun getSource(countryCode: String) = viewModelScope.launch {
+    private fun getSource(countryCode: String) = viewModelScope.launch {
         sourceNews.postValue(Result.Loading())
         val response = newsRepository.getSource(countryCode, sourcePage)
         sourceNews.postValue(handleSource(response))
@@ -102,6 +102,11 @@ class NewsViewModel @Inject constructor(
         val response = newsRepository.getTechCategory(countryCode, categoryTech)
         getTechCategory.postValue(handleTech(response))
     }
+
+
+
+    //---------HANDLE RESPONSE ----------------------//
+
 
     private fun handleTech(response: Response<NewsResponse>): Result<NewsResponse>? {
         if (response.isSuccessful) {
@@ -149,7 +154,6 @@ class NewsViewModel @Inject constructor(
     }
 
 
-    //---------HANDLE RESPONSE ----------------------//
     private fun handleBusiness(response: Response<NewsResponse>) : Result<NewsResponse> {
         if (response.isSuccessful) {
             response.body()?.let { result ->
