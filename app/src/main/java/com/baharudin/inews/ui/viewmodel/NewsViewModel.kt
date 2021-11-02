@@ -8,6 +8,7 @@ import com.baharudin.inews.data.model.headline.NewsResponse
 import com.baharudin.inews.repository.NewsRepo
 import dagger.hilt.android.lifecycle.HiltViewModel
 import com.baharudin.inews.utils.Result
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import retrofit2.Response
 import javax.inject.Inject
@@ -43,6 +44,8 @@ class NewsViewModel @Inject constructor(
 
     val searchNews : MutableLiveData<Result<NewsResponse>> = MutableLiveData()
     var searchPage = 1
+
+    val newsBookmark = newsRepository.getAllBookmark()
 
     init {
         getTopHeadline("id")
@@ -181,7 +184,6 @@ class NewsViewModel @Inject constructor(
     fun insertBookmark(articles : Article) = viewModelScope.launch {
         newsRepository.insertBookmark(articles)
     }
-    fun getAllBookmark() = newsRepository.getAllBookmark()
     fun deleteBookmark(article: Article) = viewModelScope.launch {
         newsRepository.deleteNews(article)
     }
@@ -200,5 +202,9 @@ class NewsViewModel @Inject constructor(
             }
         }
         return Result.Error(response.message())
+    }
+
+    fun saveBookmark(article: Article) = viewModelScope.launch {
+        newsRepository.insertBookmark(article)
     }
 }

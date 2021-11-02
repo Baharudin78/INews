@@ -12,4 +12,7 @@
     <string name="rekomendasi">Rekomendasi</string>
     <string name="todo">TODO</string>
     <string name="bisnis">Bisnis</string>
+    <string name="kategori">Kategori</string>
+    <string name="bookmark">Bookmark</string>
+    <string name="akun">Akun</string>
 </resources>
