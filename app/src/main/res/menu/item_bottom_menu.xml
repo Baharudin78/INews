@@ -13,8 +13,4 @@
         android:title="@string/bookmark"
         android:icon="@drawable/bookmark"/>
 
-    <item android:id="@+id/userFragment"
-        android:title="@string/akun"
-        android:icon="@drawable/user"/>
-
 </menu>
