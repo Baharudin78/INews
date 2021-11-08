@@ -39,7 +39,12 @@ class HomeFragment : Fragment(R.layout.fragment_home)  {
         binding.searchBar.setOnClickListener {
             findNavController().navigate(R.id.action_homeFragment_to_searchFragment)
         }
-
+        binding.tvShowAll.setOnClickListener {
+            findNavController().navigate(R.id.action_homeFragment_to_breakingNewsFragment)
+        }
+        binding.tvShowAll2.setOnClickListener {
+            findNavController().navigate(R.id.action_homeFragment_to_rekomendasiNewsFragment)
+        }
 
     }
     private fun getHeadline() {

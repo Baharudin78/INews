@@ -25,7 +25,16 @@ class MainActivity : AppCompatActivity() {
         val navigation = supportFragmentManager.findFragmentById(R.id.fragment_view) as NavHostFragment
         navigation.findNavController().addOnDestinationChangedListener { _, destination, _ ->
             when(destination.id) {
-                R.id.entertainmentFragment, R.id.businessFragment,R.id.scienceFragment,R.id.sportFragment,R.id.technologyFragment,R.id.healthFragment,R.id.searchFragment , R.id.detailFragment->
+                R.id.entertainmentFragment,
+                R.id.businessFragment,
+                R.id.scienceFragment,
+                R.id.sportFragment,
+                R.id.technologyFragment,
+                R.id.healthFragment,
+                R.id.searchFragment ,
+                R.id.breakingNewsFragment,
+                R.id.rekomendasiNewsFragment,
+                R.id.detailFragment->
                     binding.bottomNavigationView.visibility = View.GONE
                 else -> binding.bottomNavigationView.visibility = View.VISIBLE
             }

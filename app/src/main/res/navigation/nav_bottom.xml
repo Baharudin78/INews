@@ -16,6 +16,12 @@
         <action
             android:id="@+id/action_homeFragment_to_searchFragment"
             app:destination="@id/searchFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_breakingNewsFragment"
+            app:destination="@id/breakingNewsFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_rekomendasiNewsFragment"
+            app:destination="@id/rekomendasiNewsFragment" />
     </fragment>
     <fragment
         android:id="@+id/bookmarkFragment"
@@ -120,6 +126,24 @@
         tools:layout="@layout/fragment_search" >
         <action
             android:id="@+id/action_searchFragment_to_detailFragment"
+            app:destination="@id/detailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/breakingNewsFragment"
+        android:name="com.baharudin.inews.ui.fragment.BreakingNewsFragment"
+        android:label="fragment_breaking_news"
+        tools:layout="@layout/fragment_breaking_news" >
+        <action
+            android:id="@+id/action_breakingNewsFragment_to_detailFragment"
+            app:destination="@id/detailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/rekomendasiNewsFragment"
+        android:name="com.baharudin.inews.ui.fragment.RekomendasiNewsFragment"
+        android:label="fragment_rekomendai_news"
+        tools:layout="@layout/fragment_rekomendai_news" >
+        <action
+            android:id="@+id/action_rekomendasiNewsFragment_to_detailFragment"
             app:destination="@id/detailFragment" />
     </fragment>
 </navigation>
