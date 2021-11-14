@@ -7,6 +7,7 @@
         <entry key="app/src/main/res/drawable/ic_share.xml" value="0.26974358974358975" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.18" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.28306159420289856" />
+        <entry key="app/src/main/res/layout/activity_splash_screen.xml" value="0.15307971014492755" />
         <entry key="app/src/main/res/layout/fragment_bookmark.xml" value="0.35520833333333335" />
         <entry key="app/src/main/res/layout/fragment_breaking_news.xml" value="0.1956521739130435" />
         <entry key="app/src/main/res/layout/fragment_business.xml" value="0.35520833333333335" />
@@ -21,7 +22,7 @@
         <entry key="app/src/main/res/layout/fragment_search.xml" value="0.15" />
         <entry key="app/src/main/res/layout/fragment_sport.xml" value="0.35520833333333335" />
         <entry key="app/src/main/res/layout/fragment_technology.xml" value="0.35520833333333335" />
-        <entry key="app/src/main/res/layout/fragment_user.xml" value="0.35520833333333335" />
+        <entry key="app/src/main/res/layout/fragment_user.xml" value="0.22" />
         <entry key="app/src/main/res/layout/item_bookmark.xml" value="0.35520833333333335" />
         <entry key="app/src/main/res/layout/item_category.xml" value="0.35520833333333335" />
         <entry key="app/src/main/res/layout/item_headline.xml" value="0.35520833333333335" />

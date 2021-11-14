@@ -2,10 +2,10 @@ package com.baharudin.inews.ui.activity
 
 import android.content.ContentValues.TAG
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import androidx.appcompat.app.AppCompatActivity
 import com.baharudin.inews.R
 import com.baharudin.inews.databinding.ActivityLoginBinding
 import com.baharudin.inews.utils.Constant.REQUEST_CODE
@@ -14,7 +14,6 @@ import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.common.api.ApiException
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.GoogleAuthCredential
 import com.google.firebase.auth.GoogleAuthProvider
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -35,16 +34,16 @@ class LoginActivity : AppCompatActivity() {
             .requestEmail()
             .build()
         googleSignClient = GoogleSignIn.getClient(this, googleSignIn)
-
         mAuth = FirebaseAuth.getInstance()
+        hideProgressbar()
 
         binding.btSignin.setOnClickListener {
-            showProgressbar()
             signIn()
         }
 
     }
     private fun signIn() {
+        showProgressbar()
         val signInIntent = googleSignClient.signInIntent
         startActivityForResult(signInIntent,REQUEST_CODE)
     }
@@ -86,5 +85,11 @@ class LoginActivity : AppCompatActivity() {
     }
     private fun hideProgressbar() {
         binding.progresBar.visibility = View.GONE
+    }
+
+    override fun onBackPressed() {
+        finishAffinity()
+        super.onBackPressed()
+
     }
 }
