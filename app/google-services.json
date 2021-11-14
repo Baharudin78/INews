@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "430616203263",
+    "project_id": "inews-1636190862207",
+    "storage_bucket": "inews-1636190862207.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:430616203263:android:4518fb57e3974f930fa1ca",
+        "android_client_info": {
+          "package_name": "com.baharudin.inews"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "430616203263-63u81ltc5dv7443ru110b49m4lsu2nc8.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.baharudin.inews",
+            "certificate_hash": "fb4c0ee84c970331fe4dab9358c82a9cba473d4c"
+          }
+        },
+        {
+          "client_id": "430616203263-891ohhtltcknlo37hf3ehok6of2gmuon.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCcz3am0kg8QG279wzWuMYRogviraXW608"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "430616203263-891ohhtltcknlo37hf3ehok6of2gmuon.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

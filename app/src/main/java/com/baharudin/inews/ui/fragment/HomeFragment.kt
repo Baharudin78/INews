@@ -36,8 +36,11 @@ class HomeFragment : Fragment(R.layout.fragment_home)  {
         getHeadline()
         getRekomendasi()
 
-        binding.searchBar.setOnClickListener {
-            findNavController().navigate(R.id.action_homeFragment_to_searchFragment)
+
+        binding.searchBar.apply {
+            setOnClickListener {
+                findNavController().navigate(R.id.action_homeFragment_to_searchFragment)
+            }
         }
         binding.tvShowAll.setOnClickListener {
             findNavController().navigate(R.id.action_homeFragment_to_breakingNewsFragment)

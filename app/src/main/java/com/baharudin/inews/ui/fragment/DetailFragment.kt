@@ -1,5 +1,6 @@
 package com.baharudin.inews.ui.fragment
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.View
@@ -37,6 +38,15 @@ class DetailFragment : Fragment(R.layout.fragment_detail) {
             tvAuthor.text = news.author
             tvSumber.text = news.source.name
             tvDesc.text = news.description
+
+            shareLink.setOnClickListener {
+                val shareSheet = Intent().apply {
+                    action = Intent.ACTION_SEND
+                    putExtra(Intent.EXTRA_TEXT, news.url)
+                    setType("text/plain")
+                }
+                startActivity(Intent.createChooser(shareSheet,"Send via"))
+            }
         }
         saveNews()
         subcribeBookmark()

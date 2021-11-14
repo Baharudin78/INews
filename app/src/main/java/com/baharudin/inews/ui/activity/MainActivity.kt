@@ -1,4 +1,4 @@
-package com.baharudin.inews.ui
+package com.baharudin.inews.ui.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
