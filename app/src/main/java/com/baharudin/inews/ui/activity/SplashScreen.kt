@@ -1,10 +1,12 @@
 package com.baharudin.inews.ui.activity
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
+import android.content.res.Configuration
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import androidx.appcompat.app.AppCompatActivity
+import com.baharudin.inews.R
 import com.baharudin.inews.databinding.ActivitySplashScreenBinding
 import com.google.firebase.auth.FirebaseAuth
 import dagger.hilt.android.AndroidEntryPoint
@@ -22,6 +24,17 @@ class SplashScreen : AppCompatActivity() {
 
         mAuth = FirebaseAuth.getInstance()
         val user = mAuth.currentUser
+
+            when (resources.configuration.uiMode and Configuration.UI_MODE_NIGHT_MASK) {
+                Configuration.UI_MODE_NIGHT_YES -> {
+                    binding.ivSplash.setImageResource(R.drawable.inews_black)
+                }
+                Configuration.UI_MODE_NIGHT_NO -> {
+                    binding.ivSplash.setImageResource(R.drawable.inews)
+                }
+            }
+
+
 
         Handler(Looper.getMainLooper()).postDelayed({
             if (user != null) {

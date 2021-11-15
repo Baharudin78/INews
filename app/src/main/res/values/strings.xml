@@ -18,4 +18,5 @@
     <string name="masuk_dengan_google">Masuk dengan Google</string>
     <string name="profil">Profil</string>
     <string name="logout">Logout</string>
+    <string name="mode_gelap">Mode Gelap</string>
 </resources>

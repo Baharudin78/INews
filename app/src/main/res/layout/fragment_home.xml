@@ -23,7 +23,6 @@
                 android:layout_marginStart="32dp"
                 android:layout_marginTop="15dp"
                 android:layout_marginEnd="62dp"
-                android:background="@color/grey"
                 app:srcCompat="@drawable/ic_search"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -59,8 +58,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="16dp"
                 android:layout_marginBottom="8dp"
+                android:textColor="?attr/colorPrimary"
                 android:text="@string/show_all"
-                android:textColor="@color/purple_500"
                 app:layout_constraintBottom_toTopOf="@+id/rv_headline"
                 app:layout_constraintEnd_toEndOf="parent" />
 
@@ -82,7 +81,6 @@
                 android:layout_marginTop="15dp"
                 android:fontFamily="@font/montserrat"
                 android:text="@string/rekomendasi"
-                android:textColor="@color/black"
                 android:textSize="23sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/rv_headline" />
@@ -105,8 +103,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="16dp"
                 android:layout_marginBottom="8dp"
+                android:textColor="?attr/colorPrimary"
                 android:text="@string/show_all"
-                android:textColor="@color/purple_500"
                 app:layout_constraintBottom_toTopOf="@+id/rv_rekomendasi"
                 app:layout_constraintEnd_toEndOf="parent" />
 

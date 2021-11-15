@@ -14,7 +14,6 @@
         android:layout_marginTop="32dp"
         android:fontFamily="@font/montserrat"
         android:text="@string/pilih_berita_nfavorit_anda"
-        android:textColor="@color/black"
         android:textSize="25sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
@@ -51,7 +50,6 @@
                     android:id="@+id/materialCardView"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    app:cardBackgroundColor="@color/grey"
                     app:cardCornerRadius="15dp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent">
@@ -76,7 +74,6 @@
                             android:layout_gravity="center"
                             android:fontFamily="@font/montserrat"
                             android:text="@string/bisnis"
-                            android:textColor="@color/black"
                             android:textSize="20sp" />
                     </LinearLayout>
 
@@ -96,7 +93,6 @@
                 <com.google.android.material.card.MaterialCardView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    app:cardBackgroundColor="@color/grey"
                     app:cardCornerRadius="15dp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent">
@@ -120,7 +116,6 @@
                             android:layout_gravity="center"
                             android:fontFamily="@font/montserrat"
                             android:text="@string/sains"
-                            android:textColor="@color/black"
                             android:textSize="20sp" />
                     </LinearLayout>
 
@@ -149,7 +144,6 @@
                 <com.google.android.material.card.MaterialCardView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    app:cardBackgroundColor="@color/grey"
                     app:cardCornerRadius="15dp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent">
@@ -173,7 +167,6 @@
                             android:layout_gravity="center"
                             android:fontFamily="@font/montserrat"
                             android:text="@string/teknologi"
-                            android:textColor="@color/black"
                             android:textSize="20sp" />
                     </LinearLayout>
 
@@ -193,7 +186,6 @@
                 <com.google.android.material.card.MaterialCardView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    app:cardBackgroundColor="@color/grey"
                     app:cardCornerRadius="15dp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent">
@@ -216,7 +208,6 @@
                             android:layout_gravity="center"
                             android:fontFamily="@font/montserrat"
                             android:text="@string/hiburan"
-                            android:textColor="@color/black"
                             android:textSize="20sp" />
                     </LinearLayout>
 
@@ -244,7 +235,6 @@
                 <com.google.android.material.card.MaterialCardView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    app:cardBackgroundColor="@color/grey"
                     app:cardCornerRadius="15dp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent">
@@ -267,7 +257,6 @@
                             android:layout_gravity="center"
                             android:fontFamily="@font/montserrat"
                             android:text="@string/olahraga"
-                            android:textColor="@color/black"
                             android:textSize="20sp" />
                     </LinearLayout>
 
@@ -287,7 +276,6 @@
                 <com.google.android.material.card.MaterialCardView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    app:cardBackgroundColor="@color/grey"
                     app:cardCornerRadius="15dp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent">
@@ -310,7 +298,6 @@
                             android:layout_gravity="center"
                             android:fontFamily="@font/montserrat"
                             android:text="@string/kesehatan"
-                            android:textColor="@color/black"
                             android:textSize="20sp" />
                     </LinearLayout>
 
