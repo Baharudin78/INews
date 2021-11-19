@@ -50,6 +50,7 @@ class HomeFragment : Fragment(R.layout.fragment_home)  {
         }
 
     }
+
     private fun getHeadline() {
         newsViewModel.topHeadlines.observe(viewLifecycleOwner, { response ->
             when(response) {
@@ -122,4 +123,5 @@ class HomeFragment : Fragment(R.layout.fragment_home)  {
     private fun hideProgress() {
         binding.progressBar.visibility = View.GONE
     }
+
 }

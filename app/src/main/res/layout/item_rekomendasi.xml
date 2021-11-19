@@ -11,7 +11,6 @@
         android:layout_height="150dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        app:cardCornerRadius="15dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -23,26 +22,29 @@
 
     <TextView
         android:id="@+id/tv_judulBerita"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginEnd="16dp"
         android:fontFamily="@font/montserrat"
-        android:textStyle="bold"
-        android:textSize="14sp"
         android:lines="2"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/materialCardView2"
         app:layout_constraintTop_toTopOf="@+id/materialCardView2"
         tools:text="Aku adalah manusiafagfgsajhf fa" />
 
     <TextView
         android:id="@+id/tvdescription"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
+        android:layout_marginEnd="16dp"
         android:fontFamily="@font/montserrat"
         android:textSize="14sp"
-        android:layout_marginBottom="8dp"
+        android:lines="4"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/materialCardView2"
         app:layout_constraintTop_toBottomOf="@+id/tv_judulBerita"
         tools:text="dgashdgasdhgajsd" />

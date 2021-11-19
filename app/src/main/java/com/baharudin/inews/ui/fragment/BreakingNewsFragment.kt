@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.baharudin.inews.R
 import com.baharudin.inews.adapter.RekomendasiAdapter
 import com.baharudin.inews.databinding.FragmentBreakingNewsBinding
 import com.baharudin.inews.ui.viewmodel.NewsViewModel
@@ -15,7 +16,7 @@ import dagger.hilt.android.AndroidEntryPoint
 
 
 @AndroidEntryPoint
-class BreakingNewsFragment : Fragment() {
+class BreakingNewsFragment : Fragment(R.layout.fragment_breaking_news) {
 
     private var _binding : FragmentBreakingNewsBinding? =null
     private val binding get() = _binding!!
