@@ -29,7 +29,6 @@ class BusinessFragment  : Fragment(R.layout.fragment_business)  {
         setupRecycleview()
 
         getBusinessData()
-
     }
     private fun getBusinessData() {
         newsViewModel.getBusiness.observe(viewLifecycleOwner, {response ->
@@ -70,4 +69,5 @@ class BusinessFragment  : Fragment(R.layout.fragment_business)  {
     private fun hideProgressbar() {
         binding.progressBar2.visibility = View.GONE
     }
+
 }
