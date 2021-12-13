@@ -23,7 +23,6 @@ class SplashScreen : AppCompatActivity() {
         setContentView(binding.root)
 
         mAuth = FirebaseAuth.getInstance()
-        val user = mAuth.currentUser
 
             when (resources.configuration.uiMode and Configuration.UI_MODE_NIGHT_MASK) {
                 Configuration.UI_MODE_NIGHT_YES -> {
@@ -33,17 +32,9 @@ class SplashScreen : AppCompatActivity() {
                     binding.ivSplash.setImageResource(R.drawable.inews)
                 }
             }
-
-
-
         Handler(Looper.getMainLooper()).postDelayed({
-            if (user != null) {
                 val intentHome = Intent(this, MainActivity::class.java)
                 startActivity(intentHome)
-            }else {
-                val intentLogin = Intent(this, LoginActivity::class.java)
-                startActivity(intentLogin)
-            }
         }, 1000)
     }
 }

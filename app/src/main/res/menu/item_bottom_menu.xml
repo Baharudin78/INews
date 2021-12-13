@@ -13,8 +13,5 @@
         android:title="@string/bookmark"
         android:icon="@drawable/ic_bookmark"/>
 
-    <item android:id="@+id/userFragment"
-        android:title="@string/profil"
-        android:icon="@drawable/user"/>
 
 </menu>

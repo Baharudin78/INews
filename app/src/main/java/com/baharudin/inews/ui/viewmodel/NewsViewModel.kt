@@ -181,9 +181,7 @@ class NewsViewModel @Inject constructor(
         searchNews.postValue(handleSearchNews(response))
 
     }
-    fun insertBookmark(articles : Article) = viewModelScope.launch {
-        newsRepository.insertBookmark(articles)
-    }
+
     fun deleteBookmark(article: Article) = viewModelScope.launch {
         newsRepository.deleteNews(article)
     }
