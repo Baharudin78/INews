@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.webkit.WebViewClient
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.navArgs
@@ -36,9 +37,7 @@ class DetailFragment : Fragment(R.layout.fragment_detail) {
             tvJudul.text = news.title
             tvPublishAt.text = news.publishedAt
             tvAuthor.text = news.author
-            tvSumber.text = news.source.name
-            tvDesc.text = news.description
-
+            tvDesc.text = news.content
             shareLink.setOnClickListener {
                 val shareSheet = Intent().apply {
                     action = Intent.ACTION_SEND
