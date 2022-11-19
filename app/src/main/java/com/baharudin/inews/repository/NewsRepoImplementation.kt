@@ -1,8 +1,8 @@
 package com.baharudin.inews.repository
 
 import com.baharudin.inews.data.local.dao.NewsDao
-import com.baharudin.inews.data.model.headline.Article
-import com.baharudin.inews.data.model.headline.NewsResponse
+import com.baharudin.inews.data.local.entity.Article
+import com.baharudin.inews.data.remote.api.dto.NewsResponse
 import com.baharudin.inews.data.remote.api.NewsApi
 import com.baharudin.inews.utils.Result
 import kotlinx.coroutines.flow.Flow

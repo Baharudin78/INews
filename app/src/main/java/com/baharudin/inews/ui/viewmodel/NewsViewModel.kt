@@ -3,12 +3,11 @@ package com.baharudin.inews.ui.viewmodel
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.baharudin.inews.data.model.headline.Article
-import com.baharudin.inews.data.model.headline.NewsResponse
+import com.baharudin.inews.data.local.entity.Article
+import com.baharudin.inews.data.remote.api.dto.NewsResponse
 import com.baharudin.inews.repository.NewsRepo
 import dagger.hilt.android.lifecycle.HiltViewModel
 import com.baharudin.inews.utils.Result
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import retrofit2.Response
 import javax.inject.Inject

@@ -1,6 +1,6 @@
 package com.baharudin.inews.data.remote.api
 
-import com.baharudin.inews.data.model.headline.NewsResponse
+import com.baharudin.inews.data.remote.api.dto.NewsResponse
 import com.baharudin.inews.utils.Constant.API_KEY
 import com.baharudin.inews.utils.Constant.API_VERSION
 import retrofit2.Response

@@ -6,8 +6,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
-import com.baharudin.inews.data.model.headline.Article
-import com.baharudin.inews.databinding.ItemHeadlineBinding
+import com.baharudin.inews.data.local.entity.Article
 import com.baharudin.inews.databinding.ItemRekomendasiBinding
 import com.bumptech.glide.Glide
 

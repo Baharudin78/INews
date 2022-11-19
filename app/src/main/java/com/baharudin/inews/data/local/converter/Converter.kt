@@ -1,7 +1,7 @@
 package com.baharudin.inews.data.local.converter
 
 import androidx.room.TypeConverter
-import com.baharudin.inews.data.model.headline.Source
+import com.baharudin.inews.data.local.entity.Source
 
 class Converter {
 
